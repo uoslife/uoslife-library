@@ -1,7 +1,31 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import * as path from "path";
 
-// https://vitejs.dev/config/
+import { defineConfig } from "vite";
+import dts from "vite-plugin-dts";
+
 export default defineConfig({
-  plugins: [react()],
-})
+	resolve: {
+		alias: {
+			"react-native": "react-native-web",
+		},
+	},
+	build: {
+		lib: {
+			entry: path.resolve(__dirname, "src/lib/index.tsx"),
+			name: "index",
+			fileName: "index",
+		},
+		rollupOptions: {
+			external: ["react", "react-native"],
+			output: {
+				globals: {
+					react: "React",
+				},
+			},
+		},
+		commonjsOptions: {
+			esmExternals: ["react"],
+		},
+	},
+	plugins: [dts({ exclude: "**/*.stories.tsx" })],
+});
