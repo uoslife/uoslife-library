@@ -4,7 +4,9 @@
 name: "Chromatic"
 
 # Event for the workflow
-on: push
+on:
+  - push
+  - pull_request
 
 # List of jobs
 jobs:
@@ -14,6 +16,9 @@ jobs:
     # Job steps
     steps:
       - uses: actions/checkout@v1
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
       - name: Install dependencies
         # 👇 Install dependencies with the same package manager used in the project (replace it as needed), e.g., yarn, npm, pnpm
         run: pnpm
