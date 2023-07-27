@@ -1,2 +1,1 @@
-export { Example } from "./common/atom/example/Example";
-export { Text } from "./common/atom/text/Text";
+export { Txt } from "./common/atom/txt/Txt";
