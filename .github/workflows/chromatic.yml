@@ -28,4 +28,4 @@ jobs:
         with:
           # 👇 Chromatic projectToken, refer to the manage page to obtain it.
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN_1 }}
-          workingDir: packages/design
+          workingDir: packages/design-system
