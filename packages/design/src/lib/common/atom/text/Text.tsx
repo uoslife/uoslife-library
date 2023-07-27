@@ -1,5 +1,5 @@
-import { Elements } from "../../../../utils/elements.native";
+import { Elements } from "@/utils/elements.native";
 
 export const Text = () => {
-	return <Elements.p>Text</Elements.p>;
+	return <Elements.p>Text!</Elements.p>;
 };
