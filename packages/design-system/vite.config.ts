@@ -3,6 +3,8 @@ import * as path from "path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 
+import { name } from "./package.json";
+
 export default defineConfig({
 	resolve: {
 		alias: {
@@ -11,15 +13,17 @@ export default defineConfig({
 	},
 	build: {
 		lib: {
-			entry: path.resolve(__dirname, "src/lib/index.tsx"),
+			entry: path.resolve(__dirname, "src/lib/index.ts"),
 			name: "index",
-			fileName: "index",
+			formats: ["es", "umd"],
+			fileName: (format) => `${name}.${format}.js`,
 		},
 		rollupOptions: {
-			external: ["react", "react-native"],
+			external: ["react", "react-native", "@/lib/constants"],
 			output: {
 				globals: {
 					react: "React",
+					"react-native": "ReactNative",
 				},
 			},
 		},
@@ -27,5 +31,5 @@ export default defineConfig({
 			esmExternals: ["react"],
 		},
 	},
-	plugins: [dts({ exclude: "**/*.stories.tsx" })],
+	plugins: [dts({ insertTypesEntry: true, exclude: "**/*.stories.tsx" })],
 });
