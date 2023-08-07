@@ -16,6 +16,9 @@
 	"files": [
 		"dist"
 	],
+	"publishConfig": {
+		"@uoslife:registry": "https://npm.pkg.github.com"
+	},
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
