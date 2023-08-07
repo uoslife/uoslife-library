@@ -1,15 +1,16 @@
 {
 	"name": "@uoslife/design-system",
 	"private": true,
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"type": "module",
-	"main": "dist/index.umd.cjs",
-	"module": "dist/index.js",
+	"packageManager": "pnpm@8.4.0",
+	"main": "dist/@uoslife/design-system.umd.cjs",
+	"module": "dist/@uoslife/design-system.js",
 	"types": "dist/index.d.ts",
 	"exports": {
 		".": {
-			"import": "./dist/index.js",
-			"require": "./dist/index.umd.cjs"
+			"import": "./dist/@uoslife/design-system.es.js",
+			"require": "./dist/@uoslife/design-system.umd.cjs"
 		}
 	},
 	"files": [
@@ -21,7 +22,8 @@
 		"lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
 		"storybook": "storybook dev -p 6006",
-		"build-storybook": "storybook build"
+		"build-storybook": "storybook build",
+		"test": "vitest"
 	},
 	"dependencies": {
 		"@emotion/native": "^11.11.0",
