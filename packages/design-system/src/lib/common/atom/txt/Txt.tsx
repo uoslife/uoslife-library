@@ -4,7 +4,7 @@ import { Text, TextProps } from "react-native";
 import { colors, typographs } from "@/lib/constants";
 import { colorsType, typographsType } from "@/lib/types";
 
-type TxtProps = {
+export type TxtProps = {
 	label: string;
 	color: colorsType;
 	typograph: typographsType;
