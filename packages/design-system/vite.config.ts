@@ -2,6 +2,7 @@ import * as path from "path";
 
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 import { name } from "./package.json";
 
@@ -19,7 +20,7 @@ export default defineConfig({
 			fileName: (format) => `${name}.${format}.js`,
 		},
 		rollupOptions: {
-			external: ["react", "react-native", "@/lib/constants"],
+			external: ["react", "react-native", "@emotion/native"],
 			output: {
 				globals: {
 					react: "React",
@@ -31,5 +32,8 @@ export default defineConfig({
 			esmExternals: ["react"],
 		},
 	},
-	plugins: [dts({ insertTypesEntry: true, exclude: "**/*.stories.tsx" })],
+	plugins: [
+		dts({ insertTypesEntry: true, exclude: "**/*.stories.tsx" }),
+		tsconfigPaths(),
+	],
 });
