@@ -1,4 +1,4 @@
-import { Txt, TxtProps } from "@/lib/common/index";
+import { Txt, TxtProps } from "@/lib/common";
 import { useCallback, useEffect, useState } from "react";
 
 type Props = Omit<TxtProps, "label" | "color" | "typograph">;
