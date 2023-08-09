@@ -10,7 +10,8 @@
 	"exports": {
 		".": {
 			"import": "./dist/@uoslife/react.es.js",
-			"require": "./dist/@uoslife/react.umd.cjs"
+			"require": "./dist/@uoslife/react.umd.cjs",
+			"types": "./dist/index.d.ts"
 		}
 	},
 	"files": [
@@ -23,6 +24,18 @@
 		"preview": "vite preview"
 	},
 	"publishConfig": {
+		"access": "public",
+		"exports": {
+			".": {
+				"import": "./dist/@uoslife/react.es.js",
+				"require": "./dist/@uoslife/react.umd.cjs",
+				"types": "./dist/index.d.ts"
+			},
+			"./package.json": "./package.json"
+		},
+		"main": "dist/@uoslife/react.umd.cjs",
+		"module": "dist/@uoslife/react.js",
+		"types": "dist/index.d.ts",
 		"@uoslife:registry": "https://npm.pkg.github.com",
 		"directory": "dist"
 	},

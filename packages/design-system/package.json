@@ -17,6 +17,18 @@
 		"dist"
 	],
 	"publishConfig": {
+		"access": "public",
+		"exports": {
+			".": {
+				"import": "./dist/@uoslife/design-system.es.js",
+				"require": "./dist/@uoslife/design-system.umd.cjs",
+				"types": "./dist/index.d.ts"
+			},
+			"./package.json": "./package.json"
+		},
+		"main": "dist/@uoslife/design-system.umd.cjs",
+		"module": "dist/@uoslife/design-system.js",
+		"types": "dist/index.d.ts",
 		"@uoslife:registry": "https://npm.pkg.github.com",
 		"directory": "dist"
 	},
