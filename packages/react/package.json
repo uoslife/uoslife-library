@@ -3,19 +3,32 @@
 	"private": true,
 	"version": "0.0.1",
 	"type": "module",
+	"packageManager": "pnpm@8.4.0",
+	"main": "dist/@uoslife/react.umd.cjs",
+	"module": "dist/@uoslife/react.js",
+	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/@uoslife/react.es.js",
+			"require": "./dist/@uoslife/react.umd.cjs"
+		}
+	},
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview"
 	},
-	"dependencies": {
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
-	},
 	"publishConfig": {
 		"@uoslife:registry": "https://npm.pkg.github.com",
 		"directory": "dist"
+	},
+	"dependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
 		"@types/react": "^18.2.0",
