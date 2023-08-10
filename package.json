@@ -1,6 +1,9 @@
 {
 	"name": "uoslife-library",
 	"private": true,
+	"scripts": {
+		"publish": "lerna build && lerna publish"
+	},
 	"workspaces": [
 		"packages/*"
 	],
