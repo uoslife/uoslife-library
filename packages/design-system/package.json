@@ -86,7 +86,7 @@
 	"lerna": {
 		"command": {
 			"publish": {
-				"directory": "../../dist/packages/@uoslife/react",
+				"directory": "../../dist/packages/@uoslife/design-system",
 				"assets": [
 					"package.json",
 					{
