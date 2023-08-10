@@ -114,7 +114,7 @@ importers:
       vite-tsconfig-paths:
         specifier: ^4.2.0
         version: 4.2.0(typescript@5.1.6)(vite@4.4.7)
-    publishDirectory: ./dist/*
+    publishDirectory: dist
 
   packages/react:
     dependencies:
@@ -161,7 +161,7 @@ importers:
       vite-tsconfig-paths:
         specifier: ^4.2.0
         version: 4.2.0(typescript@5.1.5)(vite@4.3.9)
-    publishDirectory: ./dist/*
+    publishDirectory: dist
 
 packages:
 
