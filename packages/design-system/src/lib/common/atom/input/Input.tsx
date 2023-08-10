@@ -1,6 +1,5 @@
 import { TextInputProps } from "react-native";
-import styled, { css } from "@emotion/native";
-import { Txt } from "../txt/Txt";
+import styled from "@emotion/native";
 
 type Props = {
 	placeholder?: string;

@@ -3,11 +3,45 @@
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
+	"packageManager": "pnpm@8.4.0",
+	"main": "dist/@uoslife/react.umd.cjs",
+	"module": "dist/@uoslife/react.js",
+	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/@uoslife/react.es.js",
+			"require": "./dist/@uoslife/react.umd.cjs",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"files": [
+		"dist/*"
+	],
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
 		"lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/uoslife/uoslife-library.git",
+		"directory": "./dist/*"
+	},
+	"publishConfig": {
+		"exports": {
+			".": {
+				"import": "./dist/@uoslife/react.es.js",
+				"require": "./dist/@uoslife/react.umd.cjs",
+				"types": "./dist/index.d.ts"
+			},
+			"./package.json": "./package.json"
+		},
+		"main": "dist/@uoslife/react.umd.cjs",
+		"module": "dist/@uoslife/react.js",
+		"types": "dist/index.d.ts",
+		"@uoslife:registry": "https://npm.pkg.github.com",
+		"directory": "./dist/*"
 	},
 	"dependencies": {
 		"react": "^18.2.0",
@@ -23,6 +57,8 @@
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"eslint-plugin-react-refresh": "^0.3.4",
 		"typescript": "^5.0.2",
-		"vite": "^4.3.9"
+		"vite": "^4.3.9",
+		"vite-plugin-dts": "^3.3.1",
+		"vite-tsconfig-paths": "^4.2.0"
 	}
 }
