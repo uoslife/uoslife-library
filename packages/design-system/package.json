@@ -22,7 +22,6 @@
 		"directory": "./dist/*"
 	},
 	"publishConfig": {
-		"access": "public",
 		"exports": {
 			".": {
 				"import": "./dist/@uoslife/design-system.es.js",

@@ -29,7 +29,6 @@
 		"directory": "./dist/*"
 	},
 	"publishConfig": {
-		"access": "public",
 		"exports": {
 			".": {
 				"import": "./dist/@uoslife/react.es.js",
