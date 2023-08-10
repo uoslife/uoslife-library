@@ -1,7 +1,7 @@
 {
 	"name": "@uoslife/react",
 	"private": true,
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"type": "module",
 	"packageManager": "pnpm@8.4.0",
 	"main": "dist/@uoslife/react.umd.cjs",
@@ -15,7 +15,7 @@
 		}
 	},
 	"files": [
-		"dist"
+		"dist/*"
 	],
 	"scripts": {
 		"dev": "vite",
