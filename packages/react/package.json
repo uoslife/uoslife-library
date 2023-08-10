@@ -23,6 +23,10 @@
 		"lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview"
 	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:uoslife/uoslife-library.git"
+	},
 	"publishConfig": {
 		"access": "public",
 		"exports": {

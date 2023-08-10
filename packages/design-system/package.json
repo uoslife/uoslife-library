@@ -16,6 +16,10 @@
 	"files": [
 		"dist"
 	],
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:uoslife/uoslife-library.git"
+	},
 	"publishConfig": {
 		"access": "public",
 		"exports": {
