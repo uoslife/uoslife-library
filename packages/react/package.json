@@ -1,7 +1,7 @@
 {
 	"name": "@uoslife/react",
 	"private": true,
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"type": "module",
 	"packageManager": "pnpm@8.4.0",
 	"main": "dist/@uoslife/react.umd.cjs",
