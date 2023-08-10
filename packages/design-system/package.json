@@ -33,7 +33,7 @@
 		"main": "dist/@uoslife/design-system.umd.cjs",
 		"module": "dist/@uoslife/design-system.js",
 		"types": "dist/index.d.ts",
-		"@uoslife:registry": "https://npm.pkg.github.com",
+		"registry": "https://npm.pkg.github.com",
 		"directory": "dist"
 	},
 	"scripts": {

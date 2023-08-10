@@ -40,7 +40,7 @@
 		"main": "dist/@uoslife/react.umd.cjs",
 		"module": "dist/@uoslife/react.js",
 		"types": "dist/index.d.ts",
-		"@uoslife:registry": "https://npm.pkg.github.com",
+		"registry": "https://npm.pkg.github.com",
 		"directory": "dist"
 	},
 	"dependencies": {
