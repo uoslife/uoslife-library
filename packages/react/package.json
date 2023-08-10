@@ -4,8 +4,8 @@
 	"version": "1.0.0",
 	"type": "module",
 	"packageManager": "pnpm@8.4.0",
-	"main": "dist/@uoslife/react.umd.js",
-	"module": "dist/@uoslife/react.js",
+	"main": "dist/@uoslife/react.es.js",
+	"module": "dist/@uoslife/react.umd.js",
 	"types": "dist/index.d.ts",
 	"exports": {
 		".": {
@@ -36,8 +36,8 @@
 				"types": "./dist/index.d.ts"
 			}
 		},
-		"main": "dist/@uoslife/react.umd.js",
-		"module": "dist/@uoslife/react.js",
+		"main": "dist/@uoslife/react.es.js",
+		"module": "dist/@uoslife/react.umd.js",
 		"types": "dist/index.d.ts",
 		"@uoslife:registry": "https://npm.pkg.github.com",
 		"directory": "dist"

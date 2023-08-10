@@ -4,8 +4,8 @@
 	"version": "1.0.1",
 	"type": "module",
 	"packageManager": "pnpm@8.4.0",
-	"main": "dist/@uoslife/design-system.umd.js",
-	"module": "dist/@uoslife/design-system.js",
+	"main": "dist/@uoslife/design-system.es.js",
+	"module": "dist/@uoslife/design-system.umd.js",
 	"types": "dist/index.d.ts",
 	"exports": {
 		".": {
@@ -30,8 +30,8 @@
 			},
 			"./package.json": "./package.json"
 		},
-		"main": "dist/@uoslife/design-system.umd.js",
-		"module": "dist/@uoslife/design-system.js",
+		"main": "dist/@uoslife/design-system.es.js",
+		"module": "dist/@uoslife/design-system.umd.js",
 		"types": "dist/index.d.ts",
 		"@uoslife:registry": "https://npm.pkg.github.com",
 		"directory": "dist"
