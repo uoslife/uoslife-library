@@ -18,7 +18,8 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/uoslife/uoslife-library.git"
+		"url": "https://github.com/uoslife/uoslife-library.git",
+		"directory": "./dist/*"
 	},
 	"publishConfig": {
 		"access": "public",
@@ -33,7 +34,7 @@
 		"main": "dist/@uoslife/design-system.umd.cjs",
 		"module": "dist/@uoslife/design-system.js",
 		"types": "dist/index.d.ts",
-		"registry": "https://npm.pkg.github.com",
+		"@uoslife:registry": "https://npm.pkg.github.com",
 		"directory": "dist"
 	},
 	"scripts": {

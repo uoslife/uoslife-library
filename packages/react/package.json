@@ -25,7 +25,8 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/uoslife/uoslife-library.git"
+		"url": "https://github.com/uoslife/uoslife-library.git",
+		"directory": "./dist/*"
 	},
 	"publishConfig": {
 		"access": "public",
@@ -40,7 +41,7 @@
 		"main": "dist/@uoslife/react.umd.cjs",
 		"module": "dist/@uoslife/react.js",
 		"types": "dist/index.d.ts",
-		"registry": "https://npm.pkg.github.com",
+		"@uoslife:registry": "https://npm.pkg.github.com",
 		"directory": "dist"
 	},
 	"dependencies": {
