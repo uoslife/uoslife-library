@@ -60,5 +60,18 @@
 		"vite-plugin-dts": "^3.3.1",
 		"vite-tsconfig-paths": "^4.2.0"
 	},
-	"gitHead": "078b8015edc9bd76643fd2f39582b072c97285ed"
+	"lerna": {
+		"command": {
+			"publish": {
+				"directory": "../../dist/packages/@uoslife/react",
+				"assets": [
+					"package.json",
+					{
+						"from": "dist/*",
+						"to": "dist"
+					}
+				]
+			}
+		}
+	}
 }
