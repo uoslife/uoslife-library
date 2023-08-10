@@ -42,7 +42,7 @@
 		"module": "dist/@uoslife/react.js",
 		"types": "dist/index.d.ts",
 		"@uoslife:registry": "https://npm.pkg.github.com",
-		"directory": "dist"
+		"directory": "./dist/*"
 	},
 	"dependencies": {
 		"react": "^18.2.0",

@@ -35,7 +35,7 @@
 		"module": "dist/@uoslife/design-system.js",
 		"types": "dist/index.d.ts",
 		"@uoslife:registry": "https://npm.pkg.github.com",
-		"directory": "dist"
+		"directory": "./dist/*"
 	},
 	"scripts": {
 		"dev": "vite",
