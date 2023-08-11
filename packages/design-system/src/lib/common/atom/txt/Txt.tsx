@@ -1,8 +1,8 @@
 import { css } from "@emotion/native";
 import { Text, TextProps } from "react-native";
 
-import { colors, typographs } from "@/lib/constants";
-import { colorsType, typographsType } from "@/lib/types";
+import { colors, typographs } from "../../../.";
+import { colorsType, typographsType } from "../../../.";
 
 export type TxtProps = {
 	label: string;
