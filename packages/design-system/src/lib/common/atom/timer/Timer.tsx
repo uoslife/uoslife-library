@@ -1,5 +1,4 @@
-import { Txt, TxtProps } from "../../../../../dist";
-// import { Txt, TxtProps } from "../.";
+import { Txt, TxtProps } from "../.";
 
 import { useTimer } from "@uoslife/react";
 
