@@ -1,11 +1,11 @@
 {
 	"name": "@uoslife/design-system",
 	"private": false,
-	"version": "1.0.1",
+	"version": "1.0.4",
 	"type": "module",
 	"packageManager": "pnpm@8.4.0",
-	"main": "dist/@uoslife/design-system.umd.js",
-	"module": "dist/@uoslife/design-system.js",
+	"main": "dist/@uoslife/design-system.es.js",
+	"module": "dist/@uoslife/design-system.umd.js",
 	"types": "dist/index.d.ts",
 	"exports": {
 		".": {
@@ -30,8 +30,8 @@
 			},
 			"./package.json": "./package.json"
 		},
-		"main": "dist/@uoslife/design-system.umd.js",
-		"module": "dist/@uoslife/design-system.js",
+		"main": "dist/@uoslife/design-system.es.js",
+		"module": "dist/@uoslife/design-system.umd.js",
 		"types": "dist/index.d.ts",
 		"@uoslife:registry": "https://npm.pkg.github.com",
 		"directory": "dist"
@@ -80,13 +80,12 @@
 		"storybook": "^7.1.1",
 		"typescript": "^5.1.6",
 		"vite": "^4.4.7",
-		"vite-plugin-dts": "^3.3.1",
-		"vite-tsconfig-paths": "^4.2.0"
+		"vite-plugin-dts": "^3.3.1"
 	},
 	"lerna": {
 		"command": {
 			"publish": {
-				"directory": "../../dist/packages/@uoslife/react",
+				"directory": "../../dist/packages/@uoslife/design-system",
 				"assets": [
 					"package.json",
 					{

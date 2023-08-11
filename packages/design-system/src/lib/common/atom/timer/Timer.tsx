@@ -1,4 +1,4 @@
-import { Txt, TxtProps } from "@/lib/common";
+import { Txt, TxtProps } from "../.";
 
 import { useTimer } from "@uoslife/react";
 
