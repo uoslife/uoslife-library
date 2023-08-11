@@ -3,7 +3,6 @@ import * as path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import dts from "vite-plugin-dts";
-import tsconfigPaths from "vite-tsconfig-paths";
 
 import { name } from "./package.json";
 
@@ -29,5 +28,5 @@ export default defineConfig({
 			esmExternals: ["react"],
 		},
 	},
-	plugins: [dts({ insertTypesEntry: true }), react(), tsconfigPaths()],
+	plugins: [dts({ insertTypesEntry: true }), react()],
 });

@@ -2,14 +2,13 @@ import * as path from "path";
 
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
-import tsconfigPaths from "vite-tsconfig-paths";
 
 import { name } from "./package.json";
 
 export default defineConfig({
 	resolve: {
 		alias: {
-			"react-native": "react-native-web",
+			// "react-native": "react-native-web",
 		},
 	},
 	build: {
@@ -24,7 +23,7 @@ export default defineConfig({
 			output: {
 				globals: {
 					react: "React",
-					"react-native": "ReactNative",
+					// "react-native": "ReactNative",
 				},
 			},
 		},
@@ -32,8 +31,5 @@ export default defineConfig({
 			esmExternals: ["react"],
 		},
 	},
-	plugins: [
-		dts({ insertTypesEntry: true, exclude: "**/*.stories.tsx" }),
-		tsconfigPaths(),
-	],
+	plugins: [dts({ insertTypesEntry: true, exclude: "**/*.stories.tsx" })],
 });
