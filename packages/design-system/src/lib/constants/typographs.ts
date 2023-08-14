@@ -1,39 +1,69 @@
 import { css } from "@emotion/native";
 
 export const typographs = {
-	headline1: css`
+	headlineLarge: css`
+		font-size: 28px;
+		line-height: 38px;
+		font-weight: 700;
+	`,
+	headlineMedium: css`
 		font-size: 24px;
 		line-height: 32px;
 		font-weight: 700;
 	`,
-	title1: css`
+	headlineSmall: css`
+		font-size: 16px;
+		line-height: 22px;
+		font-weight: 300;
+	`,
+	titleLarge: css`
 		font-size: 20px;
 		line-height: 26px;
 		font-weight: 700;
 	`,
-	body1: css`
+	titleMedium: css`
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: 600;
+	`,
+	titleSmall: css`
+		font-size: 16px;
+		line-height: 21px;
+		font-weight: 500;
+	`,
+	bodyLarge: css`
 		font-size: 16px;
 		line-height: 24px;
-		font-weight: 400;
+		font-weight: 500;
 	`,
-	label1: css`
-		font-size: 16px;
-		line-height: 24px;
-		font-weight: 400;
-	`,
-	label2: css`
+	bodyMedium: css`
 		font-size: 14px;
 		line-height: 21px;
+		font-weight: 500;
+	`,
+	bodySmall: css`
+		font-size: 12px;
+		line-height: 18px;
 		font-weight: 400;
 	`,
-	caption1: css`
+	labelLarge: css`
+		font-size: 14px;
+		line-height: 21px;
+		font-weight: 600;
+	`,
+	labelMedium: css`
 		font-size: 12px;
+		line-height: 18px;
+		font-weight: 400;
+	`,
+	labelSmall: css`
+		font-size: 11px;
 		line-height: 16px;
 		font-weight: 400;
 	`,
-	caption2: css`
+	caption: css`
 		font-size: 12px;
 		line-height: 16px;
-		font-weight: 300;
+		font-weight: 400;
 	`,
 };
