@@ -15,8 +15,8 @@ export const Timer = ({ ...props }: Props) => {
 	return (
 		<Txt
 			label={isFinish ? "done" : currentTime}
-			color={"grey"}
-			typograph={"title1"}
+			color={"grey10"}
+			typograph={"titleLarge"}
 			{...props}
 		/>
 	);
