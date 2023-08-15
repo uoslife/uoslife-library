@@ -12,7 +12,7 @@ type Story = StoryObj<typeof Txt>;
 export const Primary: Story = {
 	args: {
 		label: "label",
-		color: "accentNormal",
-		typograph: "headline1",
+		color: "secondaryBrand",
+		typograph: "headlineLarge",
 	},
 };
