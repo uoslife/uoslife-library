@@ -23,6 +23,9 @@ importers:
       '@uoslife/react':
         specifier: workspace:^
         version: link:../react/dist
+      image-to-base64:
+        specifier: ^2.2.0
+        version: 2.2.0
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -63,6 +66,9 @@ importers:
       '@storybook/testing-library':
         specifier: ^0.2.0
         version: 0.2.0
+      '@types/image-to-base64':
+        specifier: ^2.1.0
+        version: 2.1.0
       '@types/node':
         specifier: ^20.4.5
         version: 20.4.5
@@ -2690,7 +2696,7 @@ packages:
       '@octokit/request-error': 3.0.3
       '@octokit/types': 9.3.2
       is-plain-object: 5.0.0
-      node-fetch: 2.6.7
+      node-fetch: 2.6.12
       universal-user-agent: 6.0.0
     transitivePeerDependencies:
       - encoding
@@ -4433,6 +4439,10 @@ packages:
 
   /@types/http-errors@2.0.1:
     resolution: {integrity: sha512-/K3ds8TRAfBvi5vfjuz8y6+GiAYBZ0x4tXv1Av6CWBWn0IlADc+ZX9pMq7oU0fNQPnBwIZl3rmeLp6SBApbxSQ==}
+    dev: true
+
+  /@types/image-to-base64@2.1.0:
+    resolution: {integrity: sha512-UgmqJVJyPIkzzI23TWqLc9iO+hZTzNoVD0rEf+I70FeKtcxxvLIlKJ5CrejkxkvDc/8/lk9yswSYZoAv8eyOYQ==}
     dev: true
 
   /@types/istanbul-lib-coverage@2.0.4:
@@ -8051,6 +8061,14 @@ packages:
     hasBin: true
     dependencies:
       queue: 6.0.2
+    dev: false
+
+  /image-to-base64@2.2.0:
+    resolution: {integrity: sha512-Z+aMwm/91UOQqHhrz7Upre2ytKhWejZlWV/JxUTD1sT7GWWKFDJUEV5scVQKnkzSgPHFuQBUEWcanO+ma0PSVw==}
+    dependencies:
+      node-fetch: 2.6.12
+    transitivePeerDependencies:
+      - encoding
     dev: false
 
   /import-fresh@2.0.0:
