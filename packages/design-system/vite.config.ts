@@ -11,6 +11,7 @@ export default defineConfig({
 			// "react-native": "react-native-web",
 		},
 	},
+	// publicDir: path.resolve(__dirname, "src/lib/assets"),
 	build: {
 		lib: {
 			entry: path.resolve(__dirname, "src/lib/index.ts"),
