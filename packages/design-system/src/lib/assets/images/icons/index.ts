@@ -19,23 +19,21 @@ export const IconNameList = [
 ] as const;
 
 const IconsRequireObject: IconsRequireObjectType = {
-	uoslife_white: 0,
-	cafeteria_primaryDarker: 0,
-	library_primaryDarker: 0,
-	campaign_priamryDarker: 0,
-	utility_primaryBrand: 0,
-	utility_grey130: 0,
-	studentId_primaryBrand: 0,
-	studentId_grey130: 0,
-	person_primaryBrand: 0,
-	person_grey130: 0,
-	person_white: 0,
-	openInNew_primaryBrand: 0,
-	timer_primaryBrand: 0,
-	bookMark_primaryBrand: 0,
-	bookMark_grey60: 0,
+	uoslife_white: require("../images/icons/uoslife_white.png"),
+	cafeteria_primaryDarker: require("../images/icons/cafeteria_primaryDarker.png"),
+	library_primaryDarker: require("../images/icons/library_primaryDarker.png"),
+	campaign_priamryDarker: require("../images/icons/campaign_priamryDarker.png"),
+	utility_primaryBrand: require("../images/icons/utility_primaryBrand.png"),
+	utility_grey130: require("../images/icons/utility_grey130.png"),
+	studentId_primaryBrand: require("../images/icons/studentId_primaryBrand.png"),
+	studentId_grey130: require("../images/icons/studentId_grey130.png"),
+	person_primaryBrand: require("../images/icons/person_primaryBrand.png"),
+	person_grey130: require("../images/icons/person_grey130.png"),
+	person_white: require("../images/icons/person_white.png"),
+	openInNew_primaryBrand: require("../images/icons/openInNew_primaryBrand.png"),
+	timer_primaryBrand: require("../images/icons/timer_primaryBrand.png"),
+	bookMark_primaryBrand: require("../images/icons/bookMark_primaryBrand.png"),
+	bookMark_grey60: require("../images/icons/bookMark_grey60.png"),
 };
-IconNameList.forEach(
-	(name) => (IconsRequireObject[name] = require(`../images/icons/${name}.png`))
-);
+
 export default IconsRequireObject;
