@@ -36,6 +36,6 @@ const IconsRequireObject: IconsRequireObjectType = {
 	bookMark_grey60: 0,
 };
 IconNameList.forEach(
-	(name) => (IconsRequireObject[name] = require(`../assets/images/${name}.png`))
+	(name) => (IconsRequireObject[name] = require(`../images/icons/${name}.png`))
 );
 export default IconsRequireObject;
