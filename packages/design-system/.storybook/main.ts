@@ -18,6 +18,11 @@ const config: StorybookConfig = {
 	},
 	viteFinal: async (config) => {
 		config.resolve!.alias!["@"] = path.resolve(__dirname, "../src/");
+		config.resolve!.alias!["@uoslife/react"] = path.resolve(
+			__dirname,
+			"../node_modules/@uoslife/react/@uoslife/react.es.js"
+		);
+		config.resolve!.alias!["react-native"] = "react-native-web";
 		return config;
 	},
 };
