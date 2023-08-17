@@ -14,8 +14,8 @@ export const IconNameList = [
 	"person_white",
 	"openInNew_primaryBrand",
 	"timer_primaryBrand",
-	"bookMark_primaryBrand",
-	"bookMark_grey60",
+	"bookmark_primaryBrand",
+	"bookmark_grey60",
 ] as const;
 
 const IconsRequireObject: IconsRequireObjectType = {
@@ -32,8 +32,8 @@ const IconsRequireObject: IconsRequireObjectType = {
 	person_white: require("../images/icons/person_white.png"),
 	openInNew_primaryBrand: require("../images/icons/openInNew_primaryBrand.png"),
 	timer_primaryBrand: require("../images/icons/timer_primaryBrand.png"),
-	bookMark_primaryBrand: require("../images/icons/bookMark_primaryBrand.png"),
-	bookMark_grey60: require("../images/icons/bookMark_grey60.png"),
+	bookmark_primaryBrand: require("../images/icons/bookmark_primaryBrand.png"),
+	bookmark_grey60: require("../images/icons/bookmark_grey60.png"),
 };
 
 export default IconsRequireObject;
