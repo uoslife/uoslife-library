@@ -20,7 +20,13 @@ export default defineConfig({
 			fileName: (format) => `${name}.${format}.js`,
 		},
 		rollupOptions: {
-			external: ["react", "react-native", "@emotion/native", "@uoslife/react"],
+			external: [
+				"react",
+				"react-native",
+				"@emotion/native",
+				"@uoslife/react",
+				"image-to-base64",
+			],
 			output: {
 				globals: {
 					react: "React",

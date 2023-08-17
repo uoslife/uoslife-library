@@ -6,10 +6,13 @@ export type IconProps = {
 	name: IconsNameType;
 	size: 16 | 20 | 24;
 };
+import imageToBase64 from "image-to-base64";
 
-const getImageUrl = (name: string) => {
-	return new URL(`../../../assets/images/icons/${name}.png`, import.meta.url)
-		.href;
+const getImageUrl = async (name: string) => {
+	const res = await imageToBase64(`../images/icons/${name}.png`); // Path to the image
+	return res;
+	// return new URL(`../../../assets/images/icons/${name}.png`, import.meta.url)
+	// 	.href;
 };
 
 // const IconsRequireObject: IconsRequireObjectType = {
@@ -31,12 +34,14 @@ const getImageUrl = (name: string) => {
 // };
 
 export const Icon = ({ name, size }: IconProps) => {
-	return <S.ImageWrapper source={{ uri: getImageUrl(name) }} size={size} />;
+	return (
+		<S.ImageWrapper
+			source={{ uri: getImageUrl(name) as unknown as string }}
+			style={{ width: size, height: size }}
+		/>
+	);
 };
 
 const S = {
-	ImageWrapper: styled.Image<Pick<IconProps, "size">>`
-		width: ${({ size }) => size}px;
-		height: ${({ size }) => size}px;
-	`,
+	ImageWrapper: styled.Image``,
 };
