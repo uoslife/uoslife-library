@@ -1,9 +1,10 @@
-import styled from "@emotion/native";
 import { IconsNameType } from "../../..";
+import { Image } from "react-native";
 
 export type IconProps = {
 	name: IconsNameType;
-	size: 16 | 20 | 24;
+	width: number;
+	height: number;
 };
 
 const getImageUrl = (name: string) => {
@@ -11,13 +12,8 @@ const getImageUrl = (name: string) => {
 		.href;
 };
 
-export const Icon = ({ name, size }: IconProps) => {
-	return <S.ImageWrapper source={require(getImageUrl(name))} size={size} />;
-};
-
-const S = {
-	ImageWrapper: styled.Image<Pick<IconProps, "size">>`
-		width: ${({ size }) => size}px;
-		height: ${({ size }) => size}px;
-	`,
+export const Icon = ({ name, width, height }: IconProps) => {
+	return (
+		<Image source={{ uri: getImageUrl(name) }} style={{ width, height }} />
+	);
 };
