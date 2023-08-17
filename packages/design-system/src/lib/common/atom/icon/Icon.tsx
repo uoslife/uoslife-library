@@ -6,13 +6,10 @@ export type IconProps = {
 	name: IconsNameType;
 	size: 16 | 20 | 24;
 };
-import imageToBase64 from "image-to-base64";
 
 const getImageUrl = async (name: string) => {
-	const res = await imageToBase64(`../images/icons/${name}.png`); // Path to the image
-	return res;
-	// return new URL(`../../../assets/images/icons/${name}.png`, import.meta.url)
-	// 	.href;
+	return new URL(`../../../assets/images/icons/${name}.png`, import.meta.url)
+		.href;
 };
 
 // const IconsRequireObject: IconsRequireObjectType = {
