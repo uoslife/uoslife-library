@@ -108,6 +108,16 @@ export const Button = ({
 			}}
 			{...props}
 			isPressed={isPressed}
+			style={
+				isFullWidth
+					? css`
+							width: 100%;
+					  `
+					: css`
+							width: fit-content;
+							object-fit: center;
+					  `
+			}
 		>
 			<S.ButtonInnerWrapper>
 				{!!iconName && <Icon name={iconName} width={24} height={24} />}
@@ -135,8 +145,6 @@ const S = {
 	>`
 		padding: ${({ size }) => sizeToPadding(size)};
 		border-radius: ${({ isRounded }) => (!isRounded ? "12px" : "100px")};
-		width: ${({ isFullWidth }) => (isFullWidth ? "100%" : "fit-content")};
-
 		${({ variant, isEnabled, isPressed }) =>
 			variantToStyle(variant, isEnabled, isPressed)}
 	`,
