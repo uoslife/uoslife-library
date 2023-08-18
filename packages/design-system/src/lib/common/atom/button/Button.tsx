@@ -70,7 +70,7 @@ const sizeToPadding = (size: ButtonProps["size"]) => {
 export const Button = ({
 	label,
 	size = "medium",
-	variant,
+	variant = "filled",
 	isEnabled = true,
 	isRounded = false,
 	isFullWidth = false,
