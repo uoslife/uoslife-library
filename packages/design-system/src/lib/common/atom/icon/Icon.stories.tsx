@@ -11,8 +11,8 @@ type Story = StoryObj<typeof Icon>;
 
 export const Primary: Story = {
 	args: {
-		name: "cafeteria_primaryDarker",
-		width: 32,
-		height: 32,
+		name: "openInNew_primaryBrand",
+		width: 24,
+		height: 24,
 	},
 };
