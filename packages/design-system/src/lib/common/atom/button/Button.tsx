@@ -114,7 +114,7 @@ export const Button = ({
 							width: 100%;
 					  `
 					: css`
-							width: fit-content;
+							/* width: fit-content; */
 							align-self: center;
 					  `
 			}
