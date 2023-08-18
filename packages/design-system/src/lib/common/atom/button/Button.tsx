@@ -1,6 +1,6 @@
 import styled, { css } from "@emotion/native";
 import { Icon, IconsNameType, colors, typographs } from "../../..";
-import { TouchableHighlightProps } from "react-native";
+import { TouchableHighlightProps, View } from "react-native";
 import { useState } from "react";
 
 export type ButtonProps = {
@@ -93,44 +93,45 @@ export const Button = ({
 }: ButtonProps) => {
 	const [isPressed, setIsPressed] = useState(false);
 	return (
-		<S.ButtonWrapper
-			onPress={onPress}
-			size={size}
-			variant={variant}
-			isEnabled={isEnabled}
-			isRounded={isRounded}
-			isFullWidth={isFullWidth}
-			onHideUnderlay={() => {
-				setIsPressed(false);
-			}}
-			onShowUnderlay={() => {
-				setIsPressed(true);
-			}}
-			{...props}
-			isPressed={isPressed}
-			style={
-				isFullWidth
-					? css`
-							width: 100%;
-					  `
-					: css`
-							/* width: fit-content; */
-							align-self: center;
-					  `
-			}
-		>
-			<S.ButtonInnerWrapper>
-				{!!iconName && <Icon name={iconName} width={24} height={24} />}
-				<S.ButtonText
-					variant={variant}
-					isEnabled={isEnabled}
-					isPressed={isPressed}
-					style={sizeToTypograph(size)}
-				>
-					{label}
-				</S.ButtonText>
-			</S.ButtonInnerWrapper>
-		</S.ButtonWrapper>
+		<View>
+			<S.ButtonWrapper
+				onPress={onPress}
+				size={size}
+				variant={variant}
+				isEnabled={isEnabled}
+				isRounded={isRounded}
+				isFullWidth={isFullWidth}
+				onHideUnderlay={() => {
+					setIsPressed(false);
+				}}
+				onShowUnderlay={() => {
+					setIsPressed(true);
+				}}
+				{...props}
+				isPressed={isPressed}
+				style={
+					isFullWidth
+						? css`
+								width: 100%;
+						  `
+						: css`
+								align-self: center;
+						  `
+				}
+			>
+				<S.ButtonInnerWrapper>
+					{!!iconName && <Icon name={iconName} width={24} height={24} />}
+					<S.ButtonText
+						variant={variant}
+						isEnabled={isEnabled}
+						isPressed={isPressed}
+						style={sizeToTypograph(size)}
+					>
+						{label}
+					</S.ButtonText>
+				</S.ButtonInnerWrapper>
+			</S.ButtonWrapper>
+		</View>
 	);
 };
 
