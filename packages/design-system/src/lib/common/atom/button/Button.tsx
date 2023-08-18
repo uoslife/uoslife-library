@@ -67,6 +67,19 @@ const sizeToPadding = (size: ButtonProps["size"]) => {
 	}
 };
 
+const sizeToTypograph = (size: ButtonProps["size"]) => {
+	switch (size) {
+		case "small":
+			return typographs.bodySmall;
+		case "medium":
+			return typographs.bodyMedium;
+		case "large":
+			return typographs.bodyLarge;
+		case "x-large":
+			return typographs.titleMedium;
+	}
+};
+
 export const Button = ({
 	label,
 	size = "medium",
@@ -102,6 +115,7 @@ export const Button = ({
 					variant={variant}
 					isEnabled={isEnabled}
 					isPressed={isPressed}
+					style={sizeToTypograph(size)}
 				>
 					{label}
 				</S.ButtonText>
