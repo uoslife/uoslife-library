@@ -162,6 +162,5 @@ const S = {
 			variant === "filled"
 				? colors.white
 				: buttonStateToColor(isEnabled, isPressed)};
-		${typographs.bodySmall}
 	`,
 };
