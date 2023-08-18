@@ -121,7 +121,7 @@ const S = {
 	>`
 		padding: ${({ size }) => sizeToPadding(size)};
 		border-radius: ${({ isRounded }) => (!isRounded ? "12px" : "100px")};
-		width: ${({ isFullWidth }) => (isFullWidth ? "100%" : "")};
+		width: ${({ isFullWidth }) => (isFullWidth ? "100%" : "fit-content")};
 
 		${({ variant, isEnabled, isPressed }) =>
 			variantToStyle(variant, isEnabled, isPressed)}
