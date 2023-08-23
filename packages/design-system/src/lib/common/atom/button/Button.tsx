@@ -1,5 +1,5 @@
 import styled, { css } from "@emotion/native";
-import { Icon, IconsNameType, colors, typographs } from "../../..";
+import { Icon, IconsNameType, colors, colorsType, typographs } from "../../..";
 import { TouchableHighlightProps, View } from "react-native";
 import { useState } from "react";
 
@@ -11,6 +11,7 @@ export type ButtonProps = {
 	isRounded?: boolean;
 	isFullWidth?: boolean;
 	iconName?: IconsNameType;
+	iconColor?: colorsType;
 	onPress?: () => void;
 } & Omit<TouchableHighlightProps, "onPress">;
 
@@ -88,6 +89,7 @@ export const Button = ({
 	isRounded = false,
 	isFullWidth = false,
 	iconName,
+	iconColor = "white",
 	onPress,
 	...props
 }: ButtonProps) => {
@@ -120,7 +122,9 @@ export const Button = ({
 				}
 			>
 				<S.ButtonInnerWrapper>
-					{!!iconName && <Icon name={iconName} width={24} height={24} />}
+					{!!iconName && (
+						<Icon name={iconName} width={24} height={24} color={iconColor} />
+					)}
 					<S.ButtonText
 						variant={variant}
 						isEnabled={isEnabled}
