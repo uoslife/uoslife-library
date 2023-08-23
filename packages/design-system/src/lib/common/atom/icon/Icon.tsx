@@ -1,19 +1,25 @@
-import { IconsNameType } from "../../..";
-import { Image } from "react-native";
+import { IconsNameType, colorsType } from "../../..";
+import { Image, ImageProps } from "react-native";
+import { colors } from "../../../constants/colors";
 
 export type IconProps = {
 	name: IconsNameType;
 	width: number;
 	height: number;
-};
+	color: colorsType;
+} & Omit<ImageProps, "source">;
 
 const getImageUrl = (name: string) => {
 	return new URL(`../../../assets/images/icons/${name}.png`, import.meta.url)
 		.href;
 };
 
-export const Icon = ({ name, width, height }: IconProps) => {
+export const Icon = ({ name, width, height, color, ...props }: IconProps) => {
 	return (
-		<Image source={{ uri: getImageUrl(name) }} style={{ width, height }} />
+		<Image
+			source={{ uri: getImageUrl(name) }}
+			style={{ width, height, tintColor: colors[color] }}
+			{...props}
+		/>
 	);
 };
