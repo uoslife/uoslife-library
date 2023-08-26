@@ -27,6 +27,7 @@ export const WithIcon: Story = {
 		isEnabled: true,
 		isRounded: false,
 		isFullWidth: false,
-		iconName: "openInNew_primaryBrand",
+		iconName: "openInNew",
+		iconColor: "primaryBrand",
 	},
 };
