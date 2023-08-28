@@ -1,20 +1,21 @@
 export const IconNameList = [
-	"backArrow",
-	"bookmark",
-	"cafeteria",
-	"campaign",
-	"check",
-	"checkCircle",
-	"clear",
-	"forwardArrow",
-	//
-	"library",
-	"menu",
-	"openInNew",
-	"person",
-	"studentId",
-	"time",
-	"uoslife",
+  "backArrow",
+  "bookmark",
+  "cafeteria",
+  "campaign",
+  "check",
+  "checkCircle",
+  "clear",
+  "forwardArrow",
+  //
+  "library",
+  "menu",
+  "openInNew",
+  "person",
+  "studentId",
+  "time",
+  "uoslife",
+  "search",
 ] as const;
 
 // const IconsRequireObject: IconsRequireObjectType = {
