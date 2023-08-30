@@ -8,21 +8,21 @@ export const IconNameList = [
   "checkCircle",
   "clear",
   "dinner",
+  "download",
   "forward",
-	"forwardArrow",
-	"download",
-	"history",
-	"notification",
+  "forwardArrow",
+  "history",
   //
   "library",
   "lunch",
   "menu",
   "openInNew",
   "person",
+  "notification",
+  "search",
   "studentId",
   "time",
   "uoslife",
-  "search",
 ] as const;
 
 // const IconsRequireObject: IconsRequireObjectType = {
