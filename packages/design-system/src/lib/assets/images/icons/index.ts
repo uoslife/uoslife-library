@@ -9,7 +9,10 @@ export const IconNameList = [
   "clear",
   "dinner",
   "forward",
-  "forwardArrow",
+	"forwardArrow",
+	"download",
+	"history",
+	"notification",
   //
   "library",
   "lunch",
