@@ -1,7 +1,7 @@
 {
 	"name": "@uoslife/design-system",
 	"private": false,
-	"version": "1.0.31",
+	"version": "1.0.32",
 	"type": "module",
 	"packageManager": "pnpm@8.4.0",
 	"main": "dist/@uoslife/design-system.es.js",
@@ -96,5 +96,5 @@
 			}
 		}
 	},
-	"gitHead": "248da1c54c8323b587f0deb17ab0bb7c02ad7a5e"
+	"gitHead": "ec4b4ef581beb417b2ea902e71dd9e8d07849a26"
 }
