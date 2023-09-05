@@ -20,6 +20,7 @@ export const IconNameList = [
   "time",
   "uoslife",
   "search",
+  "heart",
 ] as const;
 
 // const IconsRequireObject: IconsRequireObjectType = {
