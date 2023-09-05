@@ -10,7 +10,9 @@ export const IconNameList = [
   "dinner",
   "forward",
   "forwardArrow",
+  "heart",
   //
+  "irromae",
   "library",
   "lunch",
   "menu",
@@ -20,6 +22,8 @@ export const IconNameList = [
   "time",
   "uoslife",
   "search",
+  "uoslifeLogo",
+  "uosLogo",
 ] as const;
 
 // const IconsRequireObject: IconsRequireObjectType = {
