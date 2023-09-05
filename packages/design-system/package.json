@@ -48,7 +48,7 @@
 	"dependencies": {
 		"@emotion/native": "^11.11.0",
 		"@emotion/react": "^11.11.1",
-		"@uoslife/react": "workspace:^",
+		"@uoslife/react": "^1.0.3",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-native": "^0.72.2",
@@ -95,5 +95,6 @@
 				]
 			}
 		}
-	}
+	},
+	"gitHead": "248da1c54c8323b587f0deb17ab0bb7c02ad7a5e"
 }
