@@ -23,6 +23,8 @@ export const IconNameList = [
   "studentId",
   "time",
   "uoslife",
+  "heart",
+  "search",
 ] as const;
 
 // const IconsRequireObject: IconsRequireObjectType = {
