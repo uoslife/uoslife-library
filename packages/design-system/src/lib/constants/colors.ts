@@ -46,7 +46,7 @@ export const colors = {
 	grey160: "#323130",
 	grey190: "#201F1E",
 
-	red: "#A80000",
+	red: "#E5112A",
 	// grey: text.normal,
 
 	// blue50: "#E4F2FF",
