@@ -1,4 +1,6 @@
 export const IconNameList = [
+  "arrow_back_ios",
+  "arrow_forward_ios",
   "backArrow",
   "bookmark",
   "cafeteria",
