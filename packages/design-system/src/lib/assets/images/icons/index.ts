@@ -1,6 +1,5 @@
 export const IconNameList = [
-  "arrow_back_ios",
-  "arrow_forward_ios",
+  "backward",
   "backArrow",
   "bookmark",
   "cafeteria",
@@ -10,6 +9,7 @@ export const IconNameList = [
   "clear",
   "dinner",
   "download",
+  "forward",
   "forwardArrow",
   "history",
   //
