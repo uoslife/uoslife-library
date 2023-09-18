@@ -21,6 +21,7 @@ export const Secondary = {
 		<Input
 			children={
 				<Timer
+					currentTime="00:00"
 					style={css`
 						position: absolute;
 						top: 20px;
