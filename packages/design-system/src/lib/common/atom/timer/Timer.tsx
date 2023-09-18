@@ -1,20 +1,13 @@
 import { Txt, TxtProps } from "../.";
 
-import { useTimer } from "@uoslife/react";
+type Props = {
+	currentTime: string;
+} & Omit<TxtProps, "label" | "color" | "typograph">;
 
-type Props = Omit<TxtProps, "label" | "color" | "typograph">;
-
-const VERIFICATION_TIMER_MIN = 3;
-const VERIFICATION_TIMER_SEC = 0;
-
-export const Timer = ({ ...props }: Props) => {
-	const { currentTime, isFinish } = useTimer(
-		VERIFICATION_TIMER_MIN,
-		VERIFICATION_TIMER_SEC
-	);
+export const Timer = ({ currentTime, ...props }: Props) => {
 	return (
 		<Txt
-			label={isFinish ? "done" : currentTime}
+			label={currentTime}
 			color={"grey10"}
 			typograph={"titleLarge"}
 			{...props}
