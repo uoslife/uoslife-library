@@ -1,7 +1,7 @@
 {
 	"name": "@uoslife/design-system",
 	"private": false,
-	"version": "1.0.45",
+	"version": "1.0.46",
 	"type": "module",
 	"packageManager": "pnpm@8.4.0",
 	"main": "dist/@uoslife/design-system.es.js",
@@ -48,7 +48,7 @@
 	"dependencies": {
 		"@emotion/native": "^11.11.0",
 		"@emotion/react": "^11.11.1",
-		"@uoslife/react": "^1.0.4",
+		"@uoslife/react": "^1.0.5",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-native": "^0.72.2",
