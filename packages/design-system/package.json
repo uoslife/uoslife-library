@@ -85,14 +85,17 @@
 		"command": {
 			"publish": {
 				"assets": [
-					"src/package.json",
 					{
 						"from": "dist/*",
 						"to": "dist"
+					},
+					{
+						"from": "src/package.json",
+						"to": "./"
 					}
 				]
 			}
 		}
 	},
-	"gitHead": "6370cce6d866b7674eb86caed8f6bdd271546f3b"
+	"gitHead": "4f54a9ad470279724ed7988664c3381a2a26fe5e"
 }
