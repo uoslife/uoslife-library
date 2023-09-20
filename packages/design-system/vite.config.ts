@@ -6,12 +6,6 @@ import dts from "vite-plugin-dts";
 import { name } from "./package.json";
 
 export default defineConfig({
-	resolve: {
-		alias: {
-			"react-native": "react-native-web",
-			"@emotion/native": "@emotion/react",
-		},
-	},
 	build: {
 		lib: {
 			entry: path.resolve(__dirname, "src/lib/index.ts"),
@@ -19,7 +13,6 @@ export default defineConfig({
 			formats: ["es", "umd"],
 			fileName: (format) => `${name}-web.${format}.js`,
 		},
-		outDir: "dist/web",
 		rollupOptions: {
 			external: ["react", "react-native", "@emotion/native"],
 			output: {
