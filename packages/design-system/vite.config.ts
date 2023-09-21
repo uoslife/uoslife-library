@@ -11,7 +11,7 @@ export default defineConfig({
 			entry: path.resolve(__dirname, "src/lib/index.ts"),
 			name: "index",
 			formats: ["es", "umd"],
-			fileName: (format) => `${name}-web.${format}.js`,
+			fileName: (format) => `${name}.${format}.js`,
 		},
 		rollupOptions: {
 			external: ["react", "react-native", "@emotion/native"],
