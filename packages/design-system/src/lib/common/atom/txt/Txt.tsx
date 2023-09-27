@@ -10,13 +10,16 @@ export type TxtProps = {
 	typograph: typographsType;
 } & TextProps;
 
-export const Txt = ({ label, color, typograph, ...props }: TxtProps) => {
+export const Txt = ({ label, color, typograph, style, ...props }: TxtProps) => {
 	return (
 		<Text
-			style={css`
-				color: ${colors[color]};
-				${typographs[typograph]}
-			`}
+			style={[
+				css`
+					color: ${colors[color]};
+					${typographs[typograph]}
+				`,
+				{ ...(style as object) },
+			]}
 			{...props}
 		>
 			{label}
