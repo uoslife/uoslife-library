@@ -21,8 +21,8 @@ importers:
         specifier: ^11.11.1
         version: 11.11.1(@types/react@18.2.17)(react@18.2.0)
       '@uoslife/react':
-        specifier: ^1.0.5
-        version: link:../react/dist
+        specifier: ^1.0.6
+        version: 1.0.8
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -4843,6 +4843,13 @@ packages:
       '@typescript-eslint/types': 5.62.0
       eslint-visitor-keys: 3.4.1
     dev: true
+
+  /@uoslife/react@1.0.8:
+    resolution: {integrity: sha512-jqAchBytSDz0yVyTtrjDN9O5kXfjMnTFZ9tbuqU3VjtpuvPviOthvxXjlVS2F58pz2PcfNZ+y37JxZ+PoBaVCg==, tarball: https://npm.pkg.github.com/download/@uoslife/react/1.0.8/4da9f096941ab480c2d43db912d54ee9837ad5c0}
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
 
   /@vitejs/plugin-react-swc@3.0.0(vite@4.3.9):
     resolution: {integrity: sha512-vYlodz/mjYRbxMGbHzDgR8aPR+z8n7K/enWkyBGH096xrL2DIPCuTvQVRYPTXGyy6wO7OFiMxZ3r4nKQD1sH0A==}
