@@ -91,6 +91,7 @@ export const Button = ({
 	iconName,
 	iconColor = "white",
 	onPress,
+	style,
 	...props
 }: ButtonProps) => {
 	const [isPressed, setIsPressed] = useState(false);
@@ -111,15 +112,16 @@ export const Button = ({
 				}}
 				{...props}
 				isPressed={isPressed}
-				style={
+				style={[
 					isFullWidth
 						? css`
 								width: 100%;
 						  `
 						: css`
 								align-self: center;
-						  `
-				}
+						  `,
+					{ ...(style as object) },
+				]}
 			>
 				<S.ButtonInnerWrapper>
 					{!!iconName && (
