@@ -1,7 +1,7 @@
 {
 	"name": "@uoslife/react",
 	"private": false,
-	"version": "1.0.5",
+	"version": "1.0.10",
 	"type": "module",
 	"packageManager": "pnpm@8.4.0",
 	"main": "dist/@uoslife/react.es.js",
@@ -72,5 +72,6 @@
 				]
 			}
 		}
-	}
+	},
+	"gitHead": "8153a9436be5ea5eb34407c74a0b343720ff17fc"
 }
