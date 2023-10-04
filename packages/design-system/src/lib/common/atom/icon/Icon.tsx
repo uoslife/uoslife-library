@@ -14,11 +14,20 @@ const getImageUrl = (name: string) => {
 		.href;
 };
 
-export const Icon = ({ name, width, height, color, ...props }: IconProps) => {
+export const Icon = ({
+	name,
+	width,
+	height,
+	color,
+	style,
+	...props
+}: IconProps) => {
 	return (
 		<Image
 			source={{ uri: getImageUrl(name) }}
-			style={{ width, height, tintColor: colors[color] }}
+			style={[
+				{ width, height, tintColor: colors[color], ...(style as object) },
+			]}
 			{...props}
 		/>
 	);
