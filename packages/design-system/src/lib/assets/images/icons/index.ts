@@ -2,6 +2,7 @@ export const IconNameList = [
   "backward",
   "backArrow",
   "bookmark",
+  "breakfast",
   "cafeteria",
   "campaign",
   "check",
