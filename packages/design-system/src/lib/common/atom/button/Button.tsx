@@ -21,38 +21,24 @@ const buttonStateToColor = (
 ) => {
 	/** disabled */
 	if (!isEnabled) return colors.grey40;
-	/** enabled */
+
+	/** pressed */
 	if (isPressed) return colors.primaryUi;
-	else return colors.primaryBrand;
+	/** enabled */
+	if (isEnabled) return colors.primaryBrand;
 };
 
-const variantToStyle = (
+const buttonStateToUnderlayColor = (
 	variant: ButtonProps["variant"],
-	isEnabled: ButtonProps["isEnabled"],
-	isPressed: boolean
+	isEnabled: ButtonProps["isEnabled"]
 ) => {
-	switch (variant) {
-		case "filled":
-			return css`
-				color: ${colors.white};
-				background-color: ${buttonStateToColor(isEnabled, isPressed)};
-			`;
-		case "outline":
-			return css`
-				color: ${buttonStateToColor(isEnabled, isPressed)};
-				border: 1px solid ${buttonStateToColor(isEnabled, isPressed)};
-				background-color: ${isEnabled && isPressed
-					? colors.primaryLighterAlt
-					: ""};
-			`;
-		case "text":
-			return css`
-				color: ${buttonStateToColor(isEnabled, isPressed)};
-				background-color: ${isEnabled && isPressed
-					? colors.primaryLighterAlt
-					: ""};
-			`;
+	if (!isEnabled) {
+		if (variant !== "filled") return colors.white;
+		return colors.grey40;
 	}
+	if (variant === "filled") return colors.primaryUi;
+
+	return colors.primaryLighterAlt;
 };
 
 const sizeToPadding = (size: ButtonProps["size"]) => {
@@ -95,6 +81,7 @@ export const Button = ({
 	...props
 }: ButtonProps) => {
 	const [isPressed, setIsPressed] = useState(false);
+
 	return (
 		<View>
 			<S.ButtonWrapper
@@ -122,6 +109,7 @@ export const Button = ({
 						  `,
 					{ ...(style as object) },
 				]}
+				underlayColor={buttonStateToUnderlayColor(variant, isEnabled)}
 			>
 				<S.ButtonInnerWrapper>
 					{!!iconName && (
@@ -152,8 +140,17 @@ const S = {
 	>`
 		padding: ${({ size }) => sizeToPadding(size)};
 		border-radius: ${({ isRounded }) => (!isRounded ? "12px" : "100px")};
-		${({ variant, isEnabled, isPressed }) =>
-			variantToStyle(variant, isEnabled, isPressed)}
+
+		${({ variant, isEnabled, isPressed }) => [
+			variant === "outline" &&
+				css`
+					border: 1px solid ${buttonStateToColor(isEnabled, isPressed)};
+				`,
+			variant === "filled" &&
+				css`
+					background-color: ${buttonStateToColor(isEnabled, isPressed)};
+				`,
+		]};
 	`,
 	ButtonInnerWrapper: styled.View`
 		display: flex;
