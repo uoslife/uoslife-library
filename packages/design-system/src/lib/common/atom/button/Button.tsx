@@ -11,7 +11,6 @@ export type ButtonProps = {
 	isRounded?: boolean;
 	isFullWidth?: boolean;
 	iconName?: IconsNameType;
-	iconColor?: colorsType;
 	onPress?: () => void;
 } & Omit<TouchableHighlightProps, "onPress">;
 
@@ -25,7 +24,7 @@ const buttonStateToColor = (
 	/** pressed */
 	if (isPressed) return colors.primaryUi;
 	/** enabled */
-	if (isEnabled) return colors.primaryBrand;
+	return colors.primaryBrand;
 };
 
 const buttonStateToUnderlayColor = (
@@ -75,7 +74,6 @@ export const Button = ({
 	isRounded = false,
 	isFullWidth = false,
 	iconName,
-	iconColor = "white",
 	onPress,
 	style,
 	...props
@@ -113,7 +111,16 @@ export const Button = ({
 			>
 				<S.ButtonInnerWrapper>
 					{!!iconName && (
-						<Icon name={iconName} width={24} height={24} color={iconColor} />
+						<Icon
+							name={iconName}
+							width={24}
+							height={24}
+							color_rgb={
+								variant === "filled"
+									? (colors.white as colorsType)
+									: (buttonStateToColor(isEnabled, isPressed) as colorsType)
+							}
+						/>
 					)}
 					<S.ButtonText
 						variant={variant}
