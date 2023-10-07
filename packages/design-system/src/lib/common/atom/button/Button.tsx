@@ -109,7 +109,7 @@ export const Button = ({
 				]}
 				underlayColor={buttonStateToUnderlayColor(variant, isEnabled)}
 			>
-				<S.ButtonInnerWrapper>
+				<S.ButtonInnerWrapper size={size}>
 					{!!iconName && (
 						<Icon
 							name={iconName}
@@ -159,12 +159,12 @@ const S = {
 				`,
 		]};
 	`,
-	ButtonInnerWrapper: styled.View`
+	ButtonInnerWrapper: styled.View<Pick<ButtonProps, "size">>`
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
-		gap: 2px;
+		gap: ${({ size }) => (size === "small" ? "2px" : "4px")};
 	`,
 	ButtonText: styled.Text<
 		Pick<ButtonProps, "variant" | "isEnabled"> & { isPressed: boolean }
