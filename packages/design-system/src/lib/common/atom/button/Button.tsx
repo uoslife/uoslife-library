@@ -68,7 +68,7 @@ const sizeToTypograph = (size: ButtonProps["size"]) => {
 
 export const Button = ({
 	label,
-	size = "medium",
+	size = "large",
 	variant = "filled",
 	isEnabled = true,
 	isRounded = false,
