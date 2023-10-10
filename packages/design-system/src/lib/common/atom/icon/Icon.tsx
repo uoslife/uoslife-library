@@ -6,7 +6,8 @@ export type IconProps = {
 	name: IconsNameType;
 	width: number;
 	height: number;
-	color: colorsType;
+	color?: colorsType;
+	color_rgb?: string;
 } & Omit<ImageProps, "source">;
 
 const getImageUrl = (name: string) => {
@@ -19,6 +20,7 @@ export const Icon = ({
 	width,
 	height,
 	color,
+	color_rgb,
 	style,
 	...props
 }: IconProps) => {
@@ -26,7 +28,12 @@ export const Icon = ({
 		<Image
 			source={{ uri: getImageUrl(name) }}
 			style={[
-				{ width, height, tintColor: colors[color], ...(style as object) },
+				{
+					width,
+					height,
+					tintColor: (color && colors[color]) ?? color_rgb,
+					...(style as object),
+				},
 			]}
 			{...props}
 		/>

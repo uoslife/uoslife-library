@@ -11,7 +11,6 @@ export type ButtonProps = {
 	isRounded?: boolean;
 	isFullWidth?: boolean;
 	iconName?: IconsNameType;
-	iconColor?: colorsType;
 	onPress?: () => void;
 } & Omit<TouchableHighlightProps, "onPress">;
 
@@ -21,38 +20,24 @@ const buttonStateToColor = (
 ) => {
 	/** disabled */
 	if (!isEnabled) return colors.grey40;
-	/** enabled */
+
+	/** pressed */
 	if (isPressed) return colors.primaryUi;
-	else return colors.primaryBrand;
+	/** enabled */
+	return colors.primaryBrand;
 };
 
-const variantToStyle = (
+const buttonStateToUnderlayColor = (
 	variant: ButtonProps["variant"],
-	isEnabled: ButtonProps["isEnabled"],
-	isPressed: boolean
+	isEnabled: ButtonProps["isEnabled"]
 ) => {
-	switch (variant) {
-		case "filled":
-			return css`
-				color: ${colors.white};
-				background-color: ${buttonStateToColor(isEnabled, isPressed)};
-			`;
-		case "outline":
-			return css`
-				color: ${buttonStateToColor(isEnabled, isPressed)};
-				border: 1px solid ${buttonStateToColor(isEnabled, isPressed)};
-				background-color: ${isEnabled && isPressed
-					? colors.primaryLighterAlt
-					: ""};
-			`;
-		case "text":
-			return css`
-				color: ${buttonStateToColor(isEnabled, isPressed)};
-				background-color: ${isEnabled && isPressed
-					? colors.primaryLighterAlt
-					: ""};
-			`;
+	if (!isEnabled) {
+		if (variant !== "filled") return colors.white;
+		return colors.grey40;
 	}
+	if (variant === "filled") return colors.primaryUi;
+
+	return colors.primaryLighterAlt;
 };
 
 const sizeToPadding = (size: ButtonProps["size"]) => {
@@ -83,18 +68,18 @@ const sizeToTypograph = (size: ButtonProps["size"]) => {
 
 export const Button = ({
 	label,
-	size = "medium",
+	size = "large",
 	variant = "filled",
 	isEnabled = true,
 	isRounded = false,
 	isFullWidth = false,
 	iconName,
-	iconColor = "white",
 	onPress,
 	style,
 	...props
 }: ButtonProps) => {
 	const [isPressed, setIsPressed] = useState(false);
+
 	return (
 		<View>
 			<S.ButtonWrapper
@@ -122,10 +107,20 @@ export const Button = ({
 						  `,
 					{ ...(style as object) },
 				]}
+				underlayColor={buttonStateToUnderlayColor(variant, isEnabled)}
 			>
-				<S.ButtonInnerWrapper>
+				<S.ButtonInnerWrapper size={size}>
 					{!!iconName && (
-						<Icon name={iconName} width={24} height={24} color={iconColor} />
+						<Icon
+							name={iconName}
+							width={24}
+							height={24}
+							color_rgb={
+								variant === "filled"
+									? (colors.white as colorsType)
+									: (buttonStateToColor(isEnabled, isPressed) as colorsType)
+							}
+						/>
 					)}
 					<S.ButtonText
 						variant={variant}
@@ -152,15 +147,24 @@ const S = {
 	>`
 		padding: ${({ size }) => sizeToPadding(size)};
 		border-radius: ${({ isRounded }) => (!isRounded ? "12px" : "100px")};
-		${({ variant, isEnabled, isPressed }) =>
-			variantToStyle(variant, isEnabled, isPressed)}
+
+		${({ variant, isEnabled, isPressed }) => [
+			variant === "outline" &&
+				css`
+					border: 1px solid ${buttonStateToColor(isEnabled, isPressed)};
+				`,
+			variant === "filled" &&
+				css`
+					background-color: ${buttonStateToColor(isEnabled, isPressed)};
+				`,
+		]};
 	`,
-	ButtonInnerWrapper: styled.View`
+	ButtonInnerWrapper: styled.View<Pick<ButtonProps, "size">>`
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
-		gap: 2px;
+		gap: ${({ size }) => (size === "small" ? "2px" : "4px")};
 	`,
 	ButtonText: styled.Text<
 		Pick<ButtonProps, "variant" | "isEnabled"> & { isPressed: boolean }
