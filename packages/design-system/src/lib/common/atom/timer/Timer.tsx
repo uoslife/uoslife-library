@@ -8,8 +8,8 @@ export const Timer = ({ currentTime, ...props }: Props) => {
 	return (
 		<Txt
 			label={currentTime}
-			color={"grey10"}
-			typograph={"titleLarge"}
+			color={"grey190"}
+			typograph={"titleMedium"}
 			{...props}
 		/>
 	);
