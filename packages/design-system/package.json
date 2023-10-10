@@ -1,7 +1,7 @@
 {
 	"name": "@uoslife/design-system",
 	"private": false,
-	"version": "1.0.57",
+	"version": "1.0.58",
 	"type": "module",
 	"packageManager": "pnpm@8.4.0",
 	"main": "dist/@uoslife/design-system.es.js",
