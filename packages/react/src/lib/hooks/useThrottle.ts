@@ -7,7 +7,7 @@ const THROTTLE_DEFAULT_TIME = 1 * 1000;
 export const useThrottle = <T extends unknown[]>(
 	callback: (...params: T) => void,
 	throttleTime: number | undefined = THROTTLE_DEFAULT_TIME
-): (() => void) => {
+): ((...params: T) => void) => {
 	const timer = useRef<ReturnType<Date["valueOf"]>>(0);
 
 	return (...params: T) => {
