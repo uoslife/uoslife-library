@@ -3,6 +3,39 @@
 	"private": false,
 	"version": "0.0.3",
 	"type": "module",
+	"packageManager": "pnpm@8.4.0",
+	"main": "dist/@uoslife/webview.es.js",
+	"module": "dist/@uoslife/webview.umd.js",
+	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/@uoslife/webview.es.js",
+			"require": "./dist/@uoslife/webview.umd.js"
+		}
+	},
+	"files": [
+		"dist/*"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/uoslife/uoslife-library.git",
+		"directory": "dist"
+	},
+	"publishConfig": {
+		"exports": {
+			".": {
+				"import": "./dist/@uoslife/webview.es.js",
+				"require": "./dist/@uoslife/webview.umd.js",
+				"types": "./dist/index.d.ts"
+			},
+			"./package.json": "./package.json"
+		},
+		"main": "dist/@uoslife/webview.es.js",
+		"module": "dist/@uoslife/webview.umd.js",
+		"types": "dist/index.d.ts",
+		"@uoslife:registry": "https://npm.pkg.github.com",
+		"directory": "dist"
+	},
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
