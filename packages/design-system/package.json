@@ -1,38 +1,49 @@
 {
 	"name": "@uoslife/design-system",
 	"private": false,
-	"version": "1.1.2",
+	"version": "1.2.1",
 	"type": "module",
 	"packageManager": "pnpm@8.4.0",
-	"main": "dist/@uoslife/design-system.es.js",
-	"module": "dist/@uoslife/design-system.umd.js",
-	"types": "dist/index.d.ts",
-	"exports": {
-		".": {
-			"import": "./dist/@uoslife/design-system.es.js",
-			"require": "./dist/@uoslife/design-system.umd.js"
-		}
-	},
 	"files": [
 		"dist/*"
 	],
+	"main": "dist/design-system.es.js",
+	"module": "dist/design-system.cjs.js",
+	"types": "dist/types/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/design-system.es.js",
+			"require": "./dist/design-system.cjs.js",
+			"types": "./dist/types/index.d.ts"
+		},
+		"./web": {
+			"import": "./dist/web/design-system.web.es.js",
+			"require": "./dist/web/design-system.web.cjs.js",
+			"types": "./dist/types/index.web.d.ts"
+		}
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/uoslife/uoslife-library.git",
 		"directory": "dist"
 	},
 	"publishConfig": {
+		"main": "dist/design-system.es.js",
+		"module": "dist/design-system.umd.js",
+		"types": "dist/types/index.d.ts",
 		"exports": {
 			".": {
-				"import": "./dist/@uoslife/design-system.es.js",
-				"require": "./dist/@uoslife/design-system.umd.js",
-				"types": "./dist/index.d.ts"
+				"import": "./dist/design-system.es.js",
+				"require": "./dist/design-system.cjs.js",
+				"types": "./dist/types/index.d.ts"
+			},
+			"./web": {
+				"import": "./dist/web/design-system.web.es.js",
+				"require": "./dist/web/design-system.web.cjs.js",
+				"types": "./dist/types/index.web.d.ts"
 			},
 			"./package.json": "./package.json"
 		},
-		"main": "dist/@uoslife/design-system.es.js",
-		"module": "dist/@uoslife/design-system.umd.js",
-		"types": "dist/index.d.ts",
 		"@uoslife:registry": "https://npm.pkg.github.com",
 		"directory": "dist"
 	},
