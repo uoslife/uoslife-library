@@ -2,7 +2,6 @@
 
 - 시대생 프로덕트에서 공통적으로 사용하는 Design System, custom react hook, webview 등의 기능을 관리하는 라이브러리입니다.
 
-
 ## Stack
 
 <div style="display: flex; flex-direction: row;">
@@ -25,12 +24,15 @@ $ pnpm install
 ## 소개
 
 ### Design-system
+
 - 시대생팀에서 만드는 모든 서비스에서 사용자에게 일관된 경험을 제공하기 위해 만들어진 디자인 시스템을 제공합니다.
 
 ### React
+
 - 시대생팀 프로덕트에서 자주 사용하는 유용한 hooks를 관리합니다.
 
 ### Webview
+
 - Native와 Webview 서비스 간 정보 통신을 위한 Bridge 환경설정을 제공하는 라이브러리입니다.
 
 ## 배포 및 사용
@@ -60,3 +62,14 @@ $ pnpm run publish
 ### 사용 방법
 
 - [시대생 팀 노션 페이지](https://www.notion.so/Uoslife-library-b9d9a079c2dd4d5980fb561af8b3c7ac?pvs=4)에서 확인할 수 있습니다.
+
+#### webview
+
+- webview 프로젝트에서 아래 코드를 작성하여 사용할 수 있습니다.
+
+```typescript
+import { installUoslifeDriver, makeUoslifeBridge } from "@uoslife/webview";
+
+const { driver } = installUoslifeDriver();
+export const uoslifeBridge = makeUoslifeBridge({ driver });
+```
