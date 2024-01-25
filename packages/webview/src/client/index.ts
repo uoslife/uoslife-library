@@ -26,3 +26,5 @@ export const onMessageFromWebView = ({
 			);
 	}
 };
+
+export { default } from "./hooks";
