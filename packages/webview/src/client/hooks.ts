@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import { BackHandler, Platform } from "react-native";
 
 const useAndroidBackPress = (
-	webViewRef: ReturnType<typeof useRef<WebView>>
+	webViewRef: ReturnType<typeof useRef<WebView | null>>
 ) => {
 	// const webViewRef = useRef<WebView>();
 	const onAndroidBackPress = () => {
