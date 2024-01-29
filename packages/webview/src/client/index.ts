@@ -32,4 +32,4 @@ export const onMessageFromWebView = ({
 	}
 };
 
-export { default } from "./hooks";
+export { useAndroidBackPress } from "./hooks";
