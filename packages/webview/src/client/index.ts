@@ -5,6 +5,7 @@ import { ProtocolPayloadType } from "../protocols/types";
 type OnMessageFromWebViewProps = WebViewMessageEvent &
 	ProtocolPayloadType & {
 		webviewRef: React.MutableRefObject<WebView<object> | null>;
+		navigationGoBack: () => void;
 	};
 
 export const onMessageFromWebView = ({
@@ -12,6 +13,7 @@ export const onMessageFromWebView = ({
 	webviewRef,
 	userPayload,
 	accessTokenPayload,
+	navigationGoBack,
 }: OnMessageFromWebViewProps) => {
 	const protocol = new Protocol(JSON.parse(nativeEvent.data));
 	switch (protocol.name) {
@@ -24,6 +26,9 @@ export const onMessageFromWebView = ({
 			webviewRef.current?.postMessage(
 				JSON.stringify({ ...protocol, payload: { ...userPayload } })
 			);
+			return;
+		case "navigation.goBack":
+			navigationGoBack();
 	}
 };
 
