@@ -47,8 +47,9 @@ export class Driver implements IDriver {
 		});
 	}
 
-	private onMessage(message: MessageEvent): void {
-		const protocol = new Protocol(JSON.parse(message.data));
+	private onMessage(message: MessageEvent | Event): void {
+		const msg = message as MessageEvent;
+		const protocol = new Protocol(JSON.parse(msg.data));
 		const request = this.requests.get(protocol.id);
 
 		if (!request) {
