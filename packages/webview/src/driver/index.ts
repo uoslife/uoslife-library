@@ -18,7 +18,7 @@ export class Driver implements IDriver {
 		switch (environment) {
 			case "web":
 				console.log("웹 환경에서는 드라이버를 사용할 수 없습니다.");
-				return;
+				return this;
 			case "ios":
 				this.reciver = window;
 				break;
