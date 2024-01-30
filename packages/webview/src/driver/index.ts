@@ -1,28 +1,38 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Protocol, RequestProps } from "../protocols";
 import { ProtocolNamesType } from "../protocols/types";
-import { IDriver } from "./types";
+import { EnvironmentType, IDriver } from "./types";
 
 export class Driver implements IDriver {
 	private _isInstalled: boolean = false;
 	private readonly requests: Map<string, RequestProps<any, any>> = new Map();
+	private _reciver: Window | Document = window;
 
 	install() {
 		if (this.isInstalled) {
 			console.log("이미 드라이버가 설치되어 있습니다.");
 			return this;
 		}
-		// if (window.environment === 'web') {
-		//   console.log('웹 환경에서는 드라이버를 사용할 수 없습니다.');
-		//   return;
-		// }
-		window.addEventListener("message", (e) => this.onMessage(e));
+		const environment = this.getCurrentEnvironment();
+
+		switch (environment) {
+			case "web":
+				console.log("웹 환경에서는 드라이버를 사용할 수 없습니다.");
+				return this;
+			case "ios":
+				this.reciver = window;
+				break;
+			case "android":
+				this.reciver = document;
+				break;
+		}
+		this.reciver.addEventListener("message", (e) => this.onMessage(e));
 		this.isInstalled = true;
 		return this;
 	}
 
 	unInstall() {
-		window.removeEventListener("message", (e) => this.onMessage(e));
+		this.reciver?.removeEventListener("message", (e) => this.onMessage(e));
 		this.isInstalled = false;
 	}
 
@@ -37,8 +47,9 @@ export class Driver implements IDriver {
 		});
 	}
 
-	private onMessage(message: MessageEvent): void {
-		const protocol = new Protocol(JSON.parse(message.data));
+	private onMessage(message: MessageEvent | Event): void {
+		const msg = message as MessageEvent;
+		const protocol = new Protocol(JSON.parse(msg.data));
 		const request = this.requests.get(protocol.id);
 
 		if (!request) {
@@ -54,6 +65,23 @@ export class Driver implements IDriver {
 	}
 	set isInstalled(val: boolean) {
 		this._isInstalled = val;
+	}
+	get reciver() {
+		return this._reciver;
+	}
+	set reciver(val: Window | Document) {
+		this._reciver = val;
+	}
+
+	getCurrentEnvironment(): EnvironmentType {
+		switch (window.navigator.userAgent) {
+			case "ios":
+				return "ios";
+			case "android":
+				return "android";
+			default:
+				return "web";
+		}
 	}
 }
 
