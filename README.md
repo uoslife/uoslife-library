@@ -61,6 +61,13 @@ $ lerna run storybook --scope @uoslife/design-system
 
 - [시대생 팀 노션 페이지](https://www.notion.so/Uoslife-library-b9d9a079c2dd4d5980fb561af8b3c7ac?pvs=4)에서 확인할 수 있습니다.
 
+#### Design system
+- 사용 예시는 아래와 같습니다.
+```typescript
+import { Txt, colors } from '@uoslife/design-system' // native 환경
+import { Txt, colors } from '@uoslife/design-system/web' // web 환경
+```
+
 #### webview
 
 - webview 프로젝트에서 아래 코드를 작성하여 사용할 수 있습니다.
