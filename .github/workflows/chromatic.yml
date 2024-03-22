@@ -5,7 +5,9 @@ name: "Chromatic"
 
 # Event for the workflow
 on:
-  - pull_request
+  pull_request:
+    branches:
+      - publish
 
 # List of jobs
 jobs:
