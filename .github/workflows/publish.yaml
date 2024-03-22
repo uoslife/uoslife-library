@@ -6,14 +6,13 @@ on:
       - publish
     # types: closed
 
-permissions:
-  contents: write # for checkout and tag
-  pull-requests: write # for comments
-  packages: write # for publish
-
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # for checkout and tag
+      pull-requests: write # for comments
+      packages: write # for publish
     steps:
       - uses: actions/checkout@v1
         with:
