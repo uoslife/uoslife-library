@@ -21,6 +21,7 @@ export const IconNameList = [
 	"menu",
 	"openInNew",
 	"person",
+	"refresh",
 	"notification",
 	"search",
 	"studentId",
