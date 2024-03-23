@@ -1,6 +1,6 @@
 {
 	"name": "uoslife-library",
-	"private": false,
+	"private": true,
 	"scripts": {
 		"publish": "lerna run build && lerna publish"
 	},
