@@ -1,7 +1,7 @@
 {
 	"name": "@uoslife/webview",
 	"private": false,
-	"version": "0.0.4",
+	"version": "0.0.13",
 	"type": "module",
 	"packageManager": "pnpm@8.4.0",
 	"main": "dist/@uoslife/webview.es.js",
@@ -10,7 +10,8 @@
 	"exports": {
 		".": {
 			"import": "./dist/@uoslife/webview.es.js",
-			"require": "./dist/@uoslife/webview.umd.js"
+			"require": "./dist/@uoslife/webview.umd.js",
+			"types": "./dist/index.d.ts"
 		}
 	},
 	"files": [

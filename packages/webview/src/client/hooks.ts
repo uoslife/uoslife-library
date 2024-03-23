@@ -2,8 +2,10 @@ import WebView from "react-native-webview";
 import { useEffect, useRef } from "react";
 import { BackHandler, Platform } from "react-native";
 
-const useWebview = () => {
-	const webViewRef = useRef<WebView>();
+export const useAndroidBackPress = (
+	webViewRef: ReturnType<typeof useRef<WebView | null>>
+) => {
+	// const webViewRef = useRef<WebView>();
 	const onAndroidBackPress = () => {
 		if (webViewRef.current) {
 			webViewRef.current.goBack();
@@ -24,5 +26,3 @@ const useWebview = () => {
 		}
 	}, []);
 };
-
-export default useWebview;

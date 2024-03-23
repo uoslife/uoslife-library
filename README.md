@@ -39,29 +39,34 @@ $ pnpm install
 
 ### 배포 방법
 
-1. 관련 이슈를 해당 repository에 등록합니다.
-2. 해당 이슈명으로 branch를 생성한 다음 작업합니다.
-3. (Design-system) 작업시 아래 명령어로 스토리북을 확인할 수 있습니다.
-
+1. 관련 이슈를 해당 repository에 등록합니다. 접두어는 다음과 같습니다.
+    - [Common], [Design-system], [React], [Webview]
+3. 해당 이슈명으로 branch를 생성한 다음 작업합니다.
+    - develop branch에서 새 feature branch를 생성합니다.
+    - 브랜치 명은 다음과 같이 작성합니다.
+    - (예시) feat/common_#(이슈번호)
+4. (Design-system 작업의 경우) 작업시 아래 명령어로 스토리북을 확인할 수 있습니다.
 ```bash
 $ lerna run storybook --scope @uoslife/design-system
 ```
 
-4. 작업이 완료되었다면 루트폴더에 아래 명령어를 진행합니다.
-
-```bash
-$ pnpm run publish
-```
-
-5. 패치 버전을 업데이트합니다. cli에서 선택할 수 있습니다.
-6. 성공적으로 배포가 완료되었다면 PR을 올리고 review를 request합니다.
-7. (Design-system) 리뷰 후 main에 merge하면 chromatic 배포 CI가 자동으로 진행됩니다.
+5. 작업 PR을 올리고 review를 request합니다. PR의 target branch는 'publish' branch입니다.
+6. approve되었다면 publish branch에 자동으로 배포가 진행됩니다.
+7. 성공적으로 배포가 완료되었다면 publish branch에서 main branch로 병합합니다.
+8. (Design-system) chromatic 배포 CI가 자동으로 진행됩니다.
 
 - 배포 완료된 패키지는 [이 곳](https://github.com/orgs/uoslife/packages?repo_name=uoslife-library)에서 확인할 수 있습니다.
 
 ### 사용 방법
 
 - [시대생 팀 노션 페이지](https://www.notion.so/Uoslife-library-b9d9a079c2dd4d5980fb561af8b3c7ac?pvs=4)에서 확인할 수 있습니다.
+
+#### Design system
+- 사용 예시는 아래와 같습니다.
+```typescript
+import { Txt, colors } from '@uoslife/design-system' // native 환경
+import { Txt, colors } from '@uoslife/design-system/web' // web 환경
+```
 
 #### webview
 
