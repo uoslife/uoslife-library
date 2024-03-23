@@ -6,13 +6,15 @@ on:
       - publish
     # types: closed
 
+permissions:
+  contents: write # for checkout and tag
+  pull-requests: write # for comments
+  packages: write # for publish
+
 jobs:
   publish:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write # for checkout and tag
-      pull-requests: write # for comments
-      packages: write # for publish
+
     steps:
       - uses: actions/checkout@v1
         with:
@@ -59,7 +61,7 @@ jobs:
           git_commit_sha: ${{ github.sha }}
           git_tag_prefix: "v"
       - name: Publish to Github Registry
-        run: pnpm run publish from-package --yes --no-verify-access
+        run: pnpm run publish from-package --yes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v3
