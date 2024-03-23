@@ -4,7 +4,7 @@ on:
   pull_request:
     branches:
       - publish
-    # types: closed
+    types: closed
 
 permissions:
   contents: write # for checkout and tag
