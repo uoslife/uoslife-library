@@ -1,5 +1,6 @@
 export const IconNameList = [
 	"alarm",
+	"arrow_down",
 	"backward",
 	"backArrow",
 	"bookmark",
