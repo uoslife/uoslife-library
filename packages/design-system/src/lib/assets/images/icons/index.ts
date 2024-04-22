@@ -11,6 +11,7 @@ export const IconNameList = [
 	"check",
 	"checkCircle",
 	"clear",
+	"desktop",
 	"dinner",
 	"disabled",
 	"download",
