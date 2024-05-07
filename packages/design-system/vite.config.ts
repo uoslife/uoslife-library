@@ -23,6 +23,7 @@ export default defineConfig({
 				globals: {
 					react: "React",
 				},
+				interop: "compat",
 			},
 		},
 		commonjsOptions: {
