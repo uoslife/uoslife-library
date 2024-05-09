@@ -75,7 +75,7 @@ export class Driver implements IDriver {
 
 	getCurrentEnvironment(): EnvironmentType {
 		switch (window.navigator.userAgent) {
-			case "ios mobile safari":
+			case "ios safari mobile":
 				return "ios";
 			case "android":
 				return "android";
