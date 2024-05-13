@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Protocol, RequestProps } from "../protocols";
 import { ProtocolNamesType } from "../protocols/types";
-import { EnvironmentType, IDriver } from "./types";
+import { getOSByUserAgent } from "../utils/getOsByUserAgent";
+import { IDriver } from "./types";
 
 export class Driver implements IDriver {
 	private _isInstalled: boolean = false;
@@ -13,7 +14,7 @@ export class Driver implements IDriver {
 			console.log("이미 드라이버가 설치되어 있습니다.");
 			return this;
 		}
-		const environment = this.getCurrentEnvironment();
+		const environment = getOSByUserAgent();
 
 		switch (environment) {
 			case "web":
@@ -25,6 +26,8 @@ export class Driver implements IDriver {
 			case "android":
 				this.reciver = document;
 				break;
+			default:
+				console.log("드라이버를 사용할 수 없습니다.");
 		}
 		this.reciver.addEventListener("message", (e) => this.onMessage(e));
 		this.isInstalled = true;
@@ -71,17 +74,6 @@ export class Driver implements IDriver {
 	}
 	set reciver(val: Window | Document) {
 		this._reciver = val;
-	}
-
-	getCurrentEnvironment(): EnvironmentType {
-		switch (window.navigator.userAgent) {
-			case "ios safari mobile":
-				return "ios";
-			case "android":
-				return "android";
-			default:
-				return "web";
-		}
 	}
 }
 

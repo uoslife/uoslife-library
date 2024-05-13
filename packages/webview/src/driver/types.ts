@@ -21,5 +21,3 @@ export interface IDriver {
 	 */
 	request<U, D>(name: string, payload: U): Promise<D>;
 }
-
-export type EnvironmentType = "ios" | "android" | "web";
