@@ -11,17 +11,26 @@ export type ProtocolNamesType =
 
 export type UserInfoType = {
 	id: number;
-	name: string;
 	nickname: string;
-	birthday: string;
-	phone: string;
-	avatarUrl: string;
+	name: string;
+	email: string;
+	identity: {
+		id: string;
+		type: string;
+		status: string;
+		idNumber: string;
+		university: string;
+		department: string;
+		major: string;
+	};
+	moderator: {
+		generation: string;
+		chapter: string;
+		role: string;
+	};
+	isLinkedPortal: boolean;
 	isVerified: boolean;
-	degree: string;
-	enrollmentStatus: string;
-	studentId: string;
-	departmentName: string;
-	collegeName: string;
+	verificationMethod: string;
 };
 
 export type AccessTokenType = {
