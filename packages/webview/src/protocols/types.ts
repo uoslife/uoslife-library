@@ -3,6 +3,7 @@ export const PROTOCOL_NAME = {
 	USER_ACCESS_TOKEN: "user.accessToken" as const,
 	USER_USER_INFO: "user.userInfo" as const,
 	NAVIGATION_GO_BACK: "navigation.goBack" as const,
+	DEVICE_INSETS: "device.insets" as const,
 };
 
 export type ProtocolNamesType =
@@ -30,4 +31,12 @@ export type AccessTokenType = {
 export type ProtocolPayloadType = {
 	userPayload: UserInfoType | null;
 	accessTokenPayload: AccessTokenType;
+	insetsPayload?: EdgeInsets;
+};
+
+export type EdgeInsets = {
+	top: number;
+	right: number;
+	bottom: number;
+	left: number;
 };

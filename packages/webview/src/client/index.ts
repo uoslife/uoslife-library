@@ -14,6 +14,7 @@ export const onMessageFromWebView = ({
 	userPayload,
 	accessTokenPayload,
 	navigationGoBack,
+	insetsPayload,
 }: OnMessageFromWebViewProps) => {
 	const protocol = new Protocol(JSON.parse(nativeEvent.data));
 	switch (protocol.name) {
@@ -29,6 +30,12 @@ export const onMessageFromWebView = ({
 			return;
 		case "navigation.goBack":
 			navigationGoBack();
+			return;
+		case "device.insets":
+			webviewRef.current?.postMessage(
+				JSON.stringify({ ...protocol, payload: { ...insetsPayload } })
+			);
+			return;
 	}
 };
 

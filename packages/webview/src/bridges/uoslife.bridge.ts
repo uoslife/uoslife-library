@@ -24,6 +24,9 @@ export class UoslifeBridge extends Bridge {
 	goBack() {
 		return super.driver.request<null>(PROTOCOL_NAME.NAVIGATION_GO_BACK);
 	}
+	getInsets() {
+		return super.driver.request<null>(PROTOCOL_NAME.DEVICE_INSETS);
+	}
 }
 
 export const makeUoslifeBridge = ({ driver }: MakeUoslifeBridgeType) => {
