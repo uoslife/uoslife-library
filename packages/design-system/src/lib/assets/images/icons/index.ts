@@ -35,4 +35,10 @@ export const IconNameList = [
 	"heart",
 	"search",
 	"camera",
+	// tab
+	"tab_announcement",
+	"tab_home",
+	"tab_mypage",
+	"tab_student_id",
+	"tab_uoslife_life"
 ] as const;
