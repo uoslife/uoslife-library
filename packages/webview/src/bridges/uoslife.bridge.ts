@@ -27,6 +27,12 @@ export class UoslifeBridge extends Bridge {
 	getInsets() {
 		return super.driver.request<null>(PROTOCOL_NAME.DEVICE_INSETS);
 	}
+	requestMeetingPayments(payload: { userCode: string; data: string }) {
+		return super.driver.request<{ userCode: string; data: string }>(
+			PROTOCOL_NAME.REQUEST_MEETING_PAYMENTS,
+			payload
+		);
+	}
 }
 
 export const makeUoslifeBridge = ({ driver }: MakeUoslifeBridgeType) => {

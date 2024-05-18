@@ -19,5 +19,5 @@ export interface IDriver {
 	/**
 	 * native client에 요청을 보냅니다.
 	 */
-	request<U, D>(name: string, payload: U): Promise<D>;
+	// request<U, D>(name: string, payload: U): Promise<D>;
 }

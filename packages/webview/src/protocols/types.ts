@@ -4,6 +4,7 @@ export const PROTOCOL_NAME = {
 	USER_USER_INFO: "user.userInfo" as const,
 	NAVIGATION_GO_BACK: "navigation.goBack" as const,
 	DEVICE_INSETS: "device.insets" as const,
+	REQUEST_MEETING_PAYMENTS: "meeting.requestPayments" as const,
 };
 
 export type ProtocolNamesType =
@@ -49,3 +50,47 @@ export type EdgeInsets = {
 	bottom: number;
 	left: number;
 };
+
+export type RequestMeetingPaymentsPayloadType = {
+	data: IPaymentData;
+	userCode: string;
+};
+
+export interface IPaymentData {
+	pg: string;
+	pay_method: string;
+	currency?: string;
+	notice_url?: string | string[];
+	display?: {
+		card_quota: number[];
+	};
+	merchant_uid: string;
+	amount: string | number;
+	buyer_tel: string;
+	app_scheme?: string;
+	escrow: boolean;
+	name: string;
+	tax_free?: number;
+	buyer_name: string;
+	buyer_email: string;
+	buyer_addr?: string;
+	buyer_postcode?: string;
+	custom_data?: object;
+	vbank_due?: string;
+	popup?: boolean;
+	digital?: boolean;
+	language?: string;
+	biz_num?: string;
+	customer_uid?: string;
+	naverPopupMode?: boolean;
+	naverUseCfm?: string;
+	naverProducts?: object[];
+	m_redirect_url?: string;
+	niceMobileV2?: boolean;
+	bypass?: {
+		daou?: {
+			PRODUCTCODE?: string;
+			CASHRECEIPTFLAG: number;
+		};
+	};
+}
