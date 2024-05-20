@@ -2,6 +2,7 @@ import { Driver } from "../driver";
 import {
 	AccessTokenType,
 	PROTOCOL_NAME,
+	RequestMeetingPaymentsPayloadType,
 	UserInfoType,
 } from "../protocols/types";
 import { Bridge } from "./bridge";
@@ -26,6 +27,12 @@ export class UoslifeBridge extends Bridge {
 	}
 	getInsets() {
 		return super.driver.request<null>(PROTOCOL_NAME.DEVICE_INSETS);
+	}
+	requestMeetingPayments(payload: RequestMeetingPaymentsPayloadType) {
+		return super.driver.request<RequestMeetingPaymentsPayloadType>(
+			PROTOCOL_NAME.REQUEST_MEETING_PAYMENTS,
+			payload
+		);
 	}
 }
 

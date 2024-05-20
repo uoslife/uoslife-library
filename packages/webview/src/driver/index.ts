@@ -39,8 +39,8 @@ export class Driver implements IDriver {
 		this.isInstalled = false;
 	}
 
-	request<U>(name: ProtocolNamesType): Promise<U> {
-		const protocol = new Protocol<U>({ name });
+	request<U>(name: ProtocolNamesType, payload?: U): Promise<U> {
+		const protocol = new Protocol<U>({ name, payload });
 
 		//@ts-expect-error: window has ReactNativeWebview
 		window.ReactNativeWebView.postMessage(protocol.toMessage());

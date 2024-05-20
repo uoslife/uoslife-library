@@ -1,11 +1,17 @@
 import WebView, { WebViewMessageEvent } from "react-native-webview";
 import { Protocol } from "../protocols";
-import { ProtocolPayloadType } from "../protocols/types";
+import {
+	ProtocolPayloadType,
+	RequestMeetingPaymentsPayloadType,
+} from "../protocols/types";
 
 type OnMessageFromWebViewProps = WebViewMessageEvent &
 	ProtocolPayloadType & {
 		webviewRef: React.MutableRefObject<WebView<object> | null>;
 		navigationGoBack: () => void;
+		onRequestMeetingPayments: (
+			payload: RequestMeetingPaymentsPayloadType
+		) => void;
 	};
 
 export const onMessageFromWebView = ({
@@ -15,6 +21,7 @@ export const onMessageFromWebView = ({
 	accessTokenPayload,
 	navigationGoBack,
 	insetsPayload,
+	onRequestMeetingPayments,
 }: OnMessageFromWebViewProps) => {
 	const protocol = new Protocol(JSON.parse(nativeEvent.data));
 	switch (protocol.name) {
@@ -34,6 +41,11 @@ export const onMessageFromWebView = ({
 		case "device.insets":
 			webviewRef.current?.postMessage(
 				JSON.stringify({ ...protocol, payload: { ...insetsPayload } })
+			);
+			return;
+		case "meeting.requestPayments":
+			onRequestMeetingPayments(
+				protocol.payload as RequestMeetingPaymentsPayloadType
 			);
 			return;
 	}
