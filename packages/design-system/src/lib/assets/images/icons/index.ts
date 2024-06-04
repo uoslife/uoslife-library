@@ -40,5 +40,5 @@ export const IconNameList = [
 	"tab_home",
 	"tab_mypage",
 	"tab_student_id",
-	"tab_uoslife_life"
+	"tab_uos_lifestyle",
 ] as const;
