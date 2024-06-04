@@ -15,6 +15,7 @@ export const IconNameList = [
 	"dinner",
 	"disabled",
 	"download",
+	"filter",
 	"forward",
 	"forwardArrow",
 	"history",
