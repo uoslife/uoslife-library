@@ -18,6 +18,7 @@ export const IconNameList = [
 	"filter",
 	"forward",
 	"forwardArrow",
+	"grade",
 	"history",
 	//
 	"info",
